@@ -671,7 +671,7 @@ var atenuantes = [
     {
         "numero": 5,
         "tipo": "Advogado Constituído",
-        "reducao": 0.3,
+        "reducao": 0.2,
         "obs": "O acusado tera direito à 30% de redução de pena e direito a fiança caso opte por este recurso, não obrigatório. Sendo direito do acusado o aguarde do Defensor Público (Advogado) em até 10 minutos."
     },
     {
@@ -689,13 +689,13 @@ var atenuantes = [
     {
         "numero": 3,
         "tipo": "Colaboração",
-        "reducao": 0.1,
+        "reducao": 0.2,
         "obs": "Colaborar com o processo de apreensão, prisão."
     },
     {
         "numero": 4,
         "tipo": "Delação Premiada",
-        "reducao": 0.2,
+        "reducao": 0.5,
         "obs": "AUTORIZADA APENAS EM PRISÕES EFETUADAS PELAS POLÍCIAS INVESTIGATIVAS. DEVEM SER AGENDADO DEPOIMENTO NA PRESENÇA DE INVESTIGADORES, ADVOGADO DO DELATOR (HONORÁRIOS - R$ 200.000,00) E PROMOTOR."
     },
 
@@ -709,7 +709,7 @@ var atenuantes = [
     {
         "numero": 7,
         "tipo": "não lida da lei de miranda",
-        "reducao": 0.2,
+        "reducao": 0.1,
         "obs": "O acusado tera direito à 20% de redução de pena e direito a fiança caso opte por este recurso, não obrigatório. Sendo direito do acusado o aguarde do Defensor Público (Advogado) em até 10 minutos."
     },
 
@@ -968,13 +968,17 @@ function calculateBail() {
         monthsPrisonValue = 120
     }
 
-    if (tempTotalReducedSentence > 0.5) {
-        tempTotalReducedSentence = 0.5
+    if (bailAmount > 700000) {
+        bailAmount = 700000
+    }
+
+    if (crimeValue > 300000) {
+        crimeValue = 300000
     }
 
     // Exibir redução no  HTML 
-    if (crimeValue > 300000) {
-        crimeValue = 300000
+    if (valuePenalReduction > 0.5) {
+        valuePenalReduction = 0.5
 
     }
 
