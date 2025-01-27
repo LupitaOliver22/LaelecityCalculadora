@@ -968,8 +968,8 @@ function calculateBail() {
         monthsPrisonValue = 120
     }
 
-    if (tempAppliedReduction > 0.5) {
-        tempAppliedReduction = 0.5
+    if (tempTotalReducedSentence > 0.5) {
+        tempTotalReducedSentence = 0.5
     }
 
     // Exibir redução no  HTML 
