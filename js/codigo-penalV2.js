@@ -695,7 +695,7 @@ var atenuantes = [
     {
         "numero": 4,
         "tipo": "Delação Premiada",
-        "reducao": 0.25,
+        "reducao": 0.2,
         "obs": "AUTORIZADA APENAS EM PRISÕES EFETUADAS PELAS POLÍCIAS INVESTIGATIVAS. DEVEM SER AGENDADO DEPOIMENTO NA PRESENÇA DE INVESTIGADORES, ADVOGADO DO DELATOR (HONORÁRIOS - R$ 200.000,00) E PROMOTOR."
     },
 
@@ -968,8 +968,8 @@ function calculateBail() {
         monthsPrisonValue = 120
     }
 
-    if (monthsPrisonValue > 120) {
-        monthsPrisonValue = 120
+    if (tempAppliedReduction > 0.5) {
+        tempAppliedReduction = 0.5
     }
 
     // Exibir redução no  HTML 
